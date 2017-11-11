@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2017-11-11</Date>
+  <Beta>False</Beta>
+  <Category>Cloud:</Category>
+  <Name>registry-web</Name>
+  <Project>https://github.com/docker/distribution</Project>
+  <Changes>
+- Initial Release (RegistryUI version 0.1.2)
+  </Changes>
+  <Overview>
+    Web UI, authentication service and event recorder for private docker registry v2.
+  </Overview>
+  <Description>
+    Web UI, authentication service and event recorder for private docker registry v2.
+  </Description>
+  <Registry>https://registry.hub.docker.com/u/hyper/docker-registry-web/</Registry>
+  <GitHub>https://github.com/docker/distribution-library-image</GitHub>
+  <Repository>hyper/docker-registry-web</Repository>
+  <ExtraParams>--link registry-srv</ExtraParams>
+  <Support></Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment>
+	<Variable>
+      <Value>https://registry-srv:5000/v2</Value>
+      <Name>REGISTRY_URL</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>true</Value>
+      <Name>REGISTRY_TRUST_ANY_SSL</Name>
+      <Mode/>
+    </Variable>
+	<Variable>
+      <Value>YWRtaW46Y2hhbmdlbWU=</Value>
+      <Name>REGISTRY_BASIC_AUTH</Name>
+      <Mode/>
+    </Variable>
+	<Variable>
+      <Value>localhost:5000</Value>
+      <Name>REGISTRY_NAME</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Config Name="Registry URL" Target="REGISTRY_URL" Default="https://registry-srv:5000/v2" Mode="" Description="Container Variable: REGISTRY_URL" Type="Variable" Display="always" Required="true" Mask="false">https://registry-srv:5000/v2</Config>
+  <Config Name="Trust Any SSL" Target="REGISTRY_TRUST_ANY_SSL" Default="true" Mode="" Description="Container Variable: REGISTRY_TRUST_ANY_SSL" Type="Variable" Display="always" Required="true" Mask="false">true</Config>
+  <Config Name="Basic Auth Password" Target="REGISTRY_BASIC_AUTH" Default="YWRtaW46Y2hhbmdlbWU=" Mode="" Description="Container Variable: REGISTRY_BASIC_AUTH" Type="Variable" Display="always" Required="true" Mask="false">YWRtaW46Y2hhbmdlbWU=</Config>
+  <Config Name="Registry Name" Target="REGISTRY_NAME" Default="localhost:5000" Mode="" Description="Container Variable: REGISTRY_NAME" Type="Variable" Display="always" Required="true" Mask="false">localhost:5000</Config>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8080</HostPort>
+        <ContainerPort>8080</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/RegistryUI</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <WebUI>http://[IP]:[PORT:8080]/</WebUI>
+  <Network Default="bridge">bridge</Network>
+
+  <Config Type="Port" Name="Registry Web UI Interface Port" Target="8080" Default="8080" Mode="tcp" Display="always-hide" Required="true"
+       Description="This is Registry Web UI port you can access via a web browser.">8080</Config>
+
+  <Config Type="Path" Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/RegistryUI" Mode="rw" Display="advanced-hide" Required="true"
+       Description="This is where RegistryUI will store its databases and configuration.">/mnt/user/appdata/RegistryUI</Config>
+</Container>

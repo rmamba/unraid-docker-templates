@@ -40,9 +40,9 @@
   </Data>
   <Network Default="bridge">bridge</Network>
 
-  <Config Type="Port" Name="Registry Interface Port" Target="5000" Default="5000" Mode="tcp" Display="always-hide" Required="true"
-       Description="This is Sync's Web UI port you can access via a web browser.">5000</Config>
+  <Config Type="Port" Name="Registry Communication Port" Target="5000" Default="5000" Mode="tcp" Display="always-hide" Required="true"
+       Description="This is Registry communication port that can be accessed from docker.">5000</Config>
 
   <Config Type="Path" Name="Config Storage Path" Target="/config" Default="/mnt/user/appdata/Registry" Mode="rw" Display="advanced-hide" Required="true"
-       Description="This is where Sync will store its databases and configuration.">/mnt/user/appdata/Registry</Config>
+       Description="This is where Registry will store its databases and configuration.">/mnt/user/appdata/Registry</Config>
 </Container>
