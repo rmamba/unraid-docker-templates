@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2019-04-08</Date>
+  <Beta>False</Beta>
+  <Category>Cloud:</Category>
+  <Name>pihole</Name>
+  <Project>https://github.com/docker/distribution</Project>
+  <Changes>
+- pihole 4.2.2-1
+  </Changes>
+  <Overview>
+    Install pihole on unRAID
+  </Overview>
+  <Description>
+    Pihole blocks adds on your local network.
+  </Description>
+  <Registry>https://hub.docker.com/r/pihole/pihole/</Registry>
+  <GitHub>https://github.com//pi-hole/docker-pi-hole</GitHub>
+  <Repository>pihole/pihole:4.2.2-1</Repository>
+  <Support>https://github.com/pi-hole/docker-pi-hole/issues</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment />
+  <WebUI>http://[IP]:[PORT:HOST_HTTP_PORT]</WebUI>
+  <Icon>https://camo.githubusercontent.com/73fd8305ca1a62929a093f3923ba25659c825757/68747470733a2f2f70692d686f6c652e6769746875622e696f2f67726170686963732f566f727465782f566f727465785f776974685f746578742e706e67</Icon>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>HOST_DNS_PORT</HostPort>
+        <ContainerPort>53</ContainerPort>
+        <Protocol>both</Protocol>
+      </Port>
+      <Port>
+        <HostPort>HOST_HTTP_PORT</HostPort>
+        <ContainerPort>80</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>HOST_HTTPS_PORT</HostPort>
+        <ContainerPort>443</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/var/run/docker.sock</HostDir>
+      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/pihole/etc-pihole</HostDir>
+      <ContainerDir>/etc/pihole</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/pihole/etc-dnsmasq.d</HostDir>
+      <ContainerDir>/etc/dnsmasq.d</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Network Default="bridge">bridge</Network>
+  <Config Type="Port" Name="DNS Port" Target="HOST_DNS_PORT" Default="53" Mode="both" Display="always-hide" Required="true" Description="This is DNS port.">53</Config>
+  <Config Type="Port" Name="HTTP Port" Target="HOST_HTTP_PORT" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">80</Config>
+  <Config Type="Port" Name="HTTPS Port" Target="HOST_HTTPS_PORT" Default="5443" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTPS port.">433</Config>
+  <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always-hide" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
+  <Config Type="Path" Name="/etc/dnsmasq.d path" Target="/etc/dnsmasq.d" Default="/etc/dnsmasq.d" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the /etc/dnsmasq.d folder.">/etc/dnsmasq.d</Config>
+</Container>
