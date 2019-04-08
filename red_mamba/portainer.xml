@@ -27,7 +27,7 @@
     <Publish>
       <Port>
         <HostPort>9000</HostPort>
-        <ContainerPort>PORTAINER_PORT</ContainerPort>
+        <ContainerPort>9000</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
     </Publish>
@@ -46,4 +46,6 @@
   </Data>
   <Network Default="bridge">bridge</Network>
   <Config Type="Port" Name="Portainer Port" Target="9000" Default="9000" Mode="tcp" Display="always-hide" Required="true" Description="This is Portainer's communication port that can be accessed from browser.">9000</Config>
+  <Config Type="Path" Name="docker.sock file" Target="/var/run/docker.sock" Default="/var/run/docker.sock" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the dockers socket file.">/var/run/docker.sock</Config>
+  <Config Type="Path" Name="Portainers data path" Target="/data" Default="/data" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the portainers data path.">/data</Config>
 </Container>
