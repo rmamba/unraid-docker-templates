@@ -34,7 +34,12 @@
   <Data>
     <Volume>
       <HostDir>/var/run/docker.sock</HostDir>
-      <ContainerDir>/var/run/docker.sock</ContainerDir>
+      <ContainerDir>/data</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/Portainer</HostDir>
+      <ContainerDir>/data</ContainerDir>
       <Mode>rw</Mode>
     </Volume>
   </Data>
