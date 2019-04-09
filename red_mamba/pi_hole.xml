@@ -83,9 +83,10 @@
   </Data>
   <ExtraParams>--dns=127.0.0.1 --dns=1.1.1.1 --restart=unless-stopped</ExtraParams>
   <Network Default="bridge">bridge</Network>
-  <Config Type="Port" Name="External HTTP Port" Target="80" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
-  <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always-hide" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
-  <Config Type="Path" Name="/etc/dnsmasq.d path" Target="/etc/dnsmasq.d" Default="/etc/dnsmasq.d" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the /etc/dnsmasq.d folder.">/etc/dnsmasq.d</Config>
+  <Config Type="Port" Name="External HTTP Port" Target="80" Default="5000" Mode="tcp" Display="always" Required="true" Description="This is HTTP port.">5000</Config>
+  <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
+  <Config Type="Path" Name="/etc/dnsmasq.d path" Target="/etc/dnsmasq.d" Default="/etc/dnsmasq.d" Mode="rw" Display="always" Required="true" Description="Point to the /etc/dnsmasq.d folder.">/etc/dnsmasq.d</Config>
+  <Config Type="Variable" Name="Server IP address" Target="127.0.0.1" Default="192.168.0.254" Display="always" Required="true" Description="What IP address is this server listening on.">192.168.0.254</Config>
   <DonateText>If you appreciate my work, then please consider donating.</DonateText>
   <DonateLink>https://paypal.me/redmamba?locale.x=en_GB</DonateLink>
   <DonateImg>https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif</DonateImg>
