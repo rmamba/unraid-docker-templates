@@ -37,7 +37,7 @@
         <Protocol>utp</Protocol>
       </Port>
       <Port>
-        <HostPort>5000</HostPort>
+        <HostPort>80</HostPort>
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -66,7 +66,7 @@
     </Volume>
   </Data>
   <Network Default="bridge">bridge</Network>
-  <Config Type="Port" Name="External HTTP Port" Target="5000" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
+  <Config Type="Port" Name="External HTTP Port" Target="80" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
   <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always-hide" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
   <Config Type="Path" Name="/etc/dnsmasq.d path" Target="/etc/dnsmasq.d" Default="/etc/dnsmasq.d" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the /etc/dnsmasq.d folder.">/etc/dnsmasq.d</Config>
   <DonateText>If you appreciate my work, then please consider donating.</DonateText>
