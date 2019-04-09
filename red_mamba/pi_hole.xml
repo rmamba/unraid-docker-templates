@@ -27,17 +27,22 @@
     <Mode>bridge</Mode>
     <Publish>
       <Port>
-        <HostPort>HOST_DNS_PORT</HostPort>
+        <HostPort>53</HostPort>
         <ContainerPort>53</ContainerPort>
-        <Protocol>both</Protocol>
+        <Protocol>tcp</Protocol>
       </Port>
       <Port>
-        <HostPort>HOST_HTTP_PORT</HostPort>
+        <HostPort>53</HostPort>
+        <ContainerPort>53</ContainerPort>
+        <Protocol>utp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>5000</HostPort>
         <ContainerPort>80</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
       <Port>
-        <HostPort>HOST_HTTPS_PORT</HostPort>
+        <HostPort>443</HostPort>
         <ContainerPort>443</ContainerPort>
         <Protocol>tcp</Protocol>
       </Port>
@@ -61,9 +66,10 @@
     </Volume>
   </Data>
   <Network Default="bridge">bridge</Network>
-  <Config Type="Port" Name="DNS Port" Target="HOST_DNS_PORT" Default="53" Mode="both" Display="always-hide" Required="true" Description="This is DNS port.">53</Config>
-  <Config Type="Port" Name="HTTP Port" Target="HOST_HTTP_PORT" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
-  <Config Type="Port" Name="HTTPS Port" Target="HOST_HTTPS_PORT" Default="443" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTPS port.">433</Config>
+  <Config Type="Port" Name="External HTTP Port" Target="5000" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
   <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always-hide" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
   <Config Type="Path" Name="/etc/dnsmasq.d path" Target="/etc/dnsmasq.d" Default="/etc/dnsmasq.d" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the /etc/dnsmasq.d folder.">/etc/dnsmasq.d</Config>
+  <DonateText>If you appreciate my work, then please consider donating.</DonateText>
+  <DonateLink>https://paypal.me/redmamba?locale.x=en_GB</DonateLink>
+  <DonateImg>https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif</DonateImg>
 </Container>
