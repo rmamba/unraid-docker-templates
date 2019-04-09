@@ -63,7 +63,7 @@
   <Network Default="bridge">bridge</Network>
   <Config Type="Port" Name="DNS Port" Target="HOST_DNS_PORT" Default="53" Mode="both" Display="always-hide" Required="true" Description="This is DNS port.">53</Config>
   <Config Type="Port" Name="HTTP Port" Target="HOST_HTTP_PORT" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
-  <Config Type="Port" Name="HTTPS Port" Target="HOST_HTTPS_PORT" Default="5443" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTPS port.">5433</Config>
+  <Config Type="Port" Name="HTTPS Port" Target="HOST_HTTPS_PORT" Default="443" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTPS port.">433</Config>
   <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always-hide" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
   <Config Type="Path" Name="/etc/dnsmasq.d path" Target="/etc/dnsmasq.d" Default="/etc/dnsmasq.d" Mode="rw" Display="adwanced-hide" Required="true" Description="Point to the /etc/dnsmasq.d folder.">/etc/dnsmasq.d</Config>
 </Container>
