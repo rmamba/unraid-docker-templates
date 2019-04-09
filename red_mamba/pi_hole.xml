@@ -58,6 +58,12 @@
       </Port>
     </Publish>
   </Networking>
+  <Environment>
+    <Variable>
+      <Name>ServerIP</Name>
+      <Value>127.0.0.1</Value>
+    </Variable>
+  </Environment>
   <Data>
     <Volume>
       <HostDir>/var/run/docker.sock</HostDir>
@@ -75,12 +81,6 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
-  <Environment>
-    <Variable>
-      <Name>ServerIP</Name>
-      <Value>[IP]</Value>
-    </Variable>
-  </Environment>
   <ExtraParams>--dns=127.0.0.1 --dns=1.1.1.1 --restart=unless-stopped</ExtraParams>
   <Network Default="bridge">bridge</Network>
   <Config Type="Port" Name="External HTTP Port" Target="80" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
