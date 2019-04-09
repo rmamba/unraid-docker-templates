@@ -65,6 +65,13 @@
       <Mode>rw</Mode>
     </Volume>
   </Data>
+  <Environment>
+    <Variable>
+      <Name>ServerIP</Name>
+      <Value>[IP]</Value>
+    </Variable>
+  </Environment>
+  <ExtraParams>--dns=127.0.0.1 --dns=1.1.1.1 --restart=unless-stopped</ExtraParams>
   <Network Default="bridge">bridge</Network>
   <Config Type="Port" Name="External HTTP Port" Target="80" Default="5000" Mode="tcp" Display="always-hide" Required="true" Description="This is HTTP port.">5000</Config>
   <Config Type="Path" Name="/etc/pihole path" Target="/etc/pihole" Default="/etc/pihole" Mode="rw" Display="always-hide" Required="true" Description="Point to the /etc/pihole folder.">/etc/pihole</Config>
