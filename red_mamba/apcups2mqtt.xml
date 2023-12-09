@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Date>2023-09-12</Date>
+  <Beta>False</Beta>
+  <Category>Cloud:</Category>
+  <Name>apcups2mqtt</Name>
+  <Project>https://github.com/rmamba/apcups2mqtt</Project>
+  <Changes>
+- apcups2mqtt tag.2023.1209.0231
+  </Changes>
+  <Overview>
+    Send APCUPS daemon data to MQTT server
+  </Overview>
+  <Description>
+    This container will constantly pull data from apcups daemons and pulish them to your MQTT server.
+    That way you can monitor your UPSs in smart home environment.
+  </Description>
+  <Registry>https://hub.docker.com/r/rmamba/apcups2mqtt/</Registry>
+  <GitHub>https://github.com/rmamba/apcups2mqtt</GitHub>
+  <Repository>rmamba/apcups2mqtt:tag.2023.1209.0231</Repository>
+  <Support>https://github.com/rmamba/apcups2mqtt/issues</Support>
+  <BindTime>true</BindTime>
+  <Privileged>false</Privileged>
+  <Environment />
+  <WebUI></WebUI>
+  <Icon>https://raw.githubusercontent.com/rmamba/unraid-docker-templates/master/assets/ups.png</Icon>
+  <Networking>
+    <Mode>bridge</Mode>
+  </Networking>
+  <Environment>
+    <Variable>
+      <Name>MQTT_SERVER</Name>
+      <Value>127.0.0.1</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_USER</Name>
+      <Value>mqttuser</Value>
+    </Variable>
+    <Variable>
+      <Name>MQTT_PASS</Name>
+      <Value>password</Value>
+    </Variable>
+    <Variable>
+      <Name>SETTINGS</Name>
+      <Value>settings</Value>
+    </Variable>
+  </Environment>
+  <ExtraParams>--restart=unless-stopped</ExtraParams>
+  <Network Default="bridge">bridge</Network>
+  <Config Type="Variable" Name="MQTT Server IP address" Target="127.0.0.1" Default="192.168.0.254" Display="always" Required="false" Description="IP address of your MQTT server.">127.0.0.1</Config>
+  <Config Type="Variable" Name="MQTT Server User" Target="mqttuser" Default="mqttuser" Display="always" Required="false" Description="Username for your MQTT server authentication.">mqttuser</Config>
+  <Config Type="Variable" Name="MQTT Server Password" Target="password" Default="password" Display="always" Required="false" Description="Password for your MQTT server authentication.">password</Config>
+  <Config Type="Variable" Name="Server IP address" Target="settings" Default="W3siaWQiOjEsICJuYW1lIjoiVVBTMSIsImhvc3QiOiIxMjcuMC4wLjEifV0=" Display="always" Required="false" Description="Settings that define at what IP apcups daemons are located. This needs to be Base64 encode json object. Cheack projects README.md file for details.">W3siaWQiOjEsICJuYW1lIjoiVVBTMSIsImhvc3QiOiIxMjcuMC4wLjEifV0=</Config>
+  <DonateText>If you appreciate my work, then please consider donating.</DonateText>
+  <DonateLink>https://paypal.me/redmamba?locale.x=en_GB</DonateLink>
+  <DonateImg>https://www.paypal.com/en_US/i/btn/btn_donate_SM.gif</DonateImg>
+</Container>
